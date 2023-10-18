@@ -8,12 +8,11 @@ import {
   signInWithEmailAndPassword,
   updateProfile,
 } from "firebase/auth";
-import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice.js";
+import { USER_AVATAR } from "../utils/constants.js";
 
 const Login = () => {
-  const navigate = useNavigate();
   const dispatch = useDispatch();
   const [isSignInForm, setIsSignInForm] = useState(true);
   const [errorMessage, setErrorMessage] = useState("");
@@ -41,7 +40,7 @@ const Login = () => {
           const user = userCredential.user;
           updateProfile(auth.currentUser, {
             displayName: name?.current?.value,
-            photoURL: "https://avatars.githubusercontent.com/u/101785058?v=4",
+            photoURL: USER_AVATAR,
           })
             .then(() => {
               const { uid, email, displayName, photoURL } = auth.currentUser;
@@ -53,7 +52,6 @@ const Login = () => {
                   photoURL: photoURL,
                 })
               );
-              navigate("/browse");
             })
             .catch((error) => {
               const errorCode = error.code;
@@ -61,8 +59,6 @@ const Login = () => {
               setErrorMessage(errorCode + "-" + errorMessage);
             });
           console.log(user);
-
-          // ...
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -80,9 +76,6 @@ const Login = () => {
           // Signed in
           const user = userCredential.user;
           console.log(user);
-          navigate("/browse");
-
-          // ...
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -95,6 +88,7 @@ const Login = () => {
   const toggleSignInForm = () => {
     setIsSignInForm(!isSignInForm);
   };
+
   return (
     <div>
       <Header />
