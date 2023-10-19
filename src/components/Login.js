@@ -58,7 +58,7 @@ const Login = () => {
               const errorMessage = error.message;
               setErrorMessage(errorCode + "-" + errorMessage);
             });
-          console.log(user);
+          // console.log(user);
         })
         .catch((error) => {
           const errorCode = error.code;
