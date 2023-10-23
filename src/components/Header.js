@@ -61,7 +61,7 @@ const Header = () => {
         <div className="flex p-2">
           {showGptSearch && (
             <select
-              className="p-2 m-2 bg-gray-900 text-white"
+              className="p-2 m-2 bg-blue-600 text-white rounded-lg"
               onChange={handleLanguageChange}
             >
               {SUPPORTED_LANGUAGES.map((lang) => (
@@ -77,8 +77,8 @@ const Header = () => {
           >
             {showGptSearch ? "Hompage" : "GPT Search"}
           </button>
-          <img className="w-12 h-12" alt="userIcon" src={user?.photoURL} />
-          <button onClick={handleSignOut} className="font-bold text-white">
+          <img className="w-12 h-12 mr-2" alt="userIcon" src={user?.photoURL} />
+          <button onClick={handleSignOut} className="py-2 px-4 ml-4 my-2 bg-gray-400 text-white rounded-lg">
             Sign Out
           </button>
         </div>
