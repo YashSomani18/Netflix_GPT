@@ -50,7 +50,7 @@ NetflixGPT is an innovative movie recommendation and search platform that levera
 - Adding .env file to gitignore
 - Made our Site Responsive
 
-Features
+# Features
 Real-time Movie Data: Integration with TMDB API to fetch the latest movie information, ensuring users have access to the most current films and data.
 Advanced Search: Incorporation of OpenAI's GPT-3 to provide intuitive movie suggestions based on natural language queries, offering a smarter search experience.
 Multi-language Support: Catering to a global audience with the ability to interact with the platform in multiple languages.
@@ -60,7 +60,7 @@ State Management: Utilization of Redux for efficient state management across the
 
 
 
-Technologies Used
+# Technologies Used
 ReactJs
 Redux
 Tailwind CSS
@@ -78,7 +78,7 @@ REACT_APP_OPENAI_API_KEY='your_openai_api_key'
 Start the development server with npm start. The application will launch in your default web browser.
 
 
-Acknowledgments
+# Acknowledgments
 TMDB for providing a comprehensive API for movie data.
 OpenAI for their cutting-edge language processing API.
 Firebase for secure and straightforward user authentication.
